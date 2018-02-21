@@ -1,0 +1,23 @@
+<div class="navbar-fixed">
+  <nav class="cyan darken-4">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo center">Docker</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="left hide-on-med-and-down">
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+            <a [routerLink]="['/']">Home</a>
+          </li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+          <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+            <a [routerLink]="['/dashboard']">Dashboard</a>
+          </li>
+        </ul>
+      </div>
+  </nav>
+</div>
+<ul class="side-nav" id="mobile-demo">
+  <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+    <a [routerLink]="['/']">Home</a>
+  </li>
+</ul>

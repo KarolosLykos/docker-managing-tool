@@ -1,0 +1,25 @@
+{
+  "name": "tradeline",
+  "version": "1.0.0",
+  "description": "Docker managment Tool",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "@types/socket.io-client": "^1.4.32",
+    "body-parser": "*",
+    "cors": "*",
+    "dockerode": "^2.5.3",
+    "express": "*",
+    "install": "^0.10.4",
+    "mongoose": "*",
+    "node-docker-api": "^1.1.21",
+    "npm": "^5.6.0",
+    "socket.io": "^2.0.4",
+    "uninstall": "0.0.0"
+  },
+  "author": "Karolos Lykos",
+  "license": "ISC"
+}

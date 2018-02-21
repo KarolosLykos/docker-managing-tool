@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col s4">
+  <h1>Images</h1>
+  <ul materialize="collapsible" class="collapsible popout" data-collapsible="accordion">
+    <li *ngFor="let image of images">
+      <div class="collapsible-header cyan darken-4">
+        <h5 class="white-text">
+          <div *ngFor="let rt of image.repoTags" class="chip">{{rt}}</div>
+        </h5>
+      </div>
+      <div class="collapsible-body teal lighten-5">
+      <span class="card-title">
+        <p class="flow-text" style="overflow-wrap: break-word;">{{image.id}}</p>
+      </span>
+        <p>Containers : {{image.containers === -1 ? 0 : image.containers}}</p>
+      </div>
+    </li>
+  </ul>
+  </div>
+  <div class="col s8">
+    <h1>Containers</h1>
+    <ul materialize="collapsible" class="collapsible popout" data-collapsible="accordion">
+      <li *ngFor="let container of containers">
+        <div class="collapsible-header cyan darken-4">
+          <h5 class="white-text">{{container.name}}</h5>
+        </div>
+        <div class="collapsible-body teal lighten-5">
+        <span>
+          <p  class="flow-text" style="overflow-wrap: break-word;">Id: {{ container.id }}</p>
+          <p>State: {{ container.state }}</p>
+          <p>Status: {{ container.status }}</p>
+          <div class="chip cyan darken-4">
+            {{ container.image }}
+          </div>
+          <p>Cmd: {{ container.cmd }}</p>
+          <p>Created: {{ container.created  * 1000 | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+          <a (click)="containerInfo(container.id)" class="waves-effect waves-light btn">Info</a>
+        </span>
+        </div>
+      </li>
+    </ul>
+  </div>

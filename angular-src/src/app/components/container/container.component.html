@@ -1,0 +1,46 @@
+<div class="row">
+  <h4>Container Stats</h4>
+  <a class="waves-effect waves-light btn" (click)="onStatsClicked()">Stats</a>
+  <div *ngIf=stats>
+    <h3>Time: {{ read | date:'yyyy-MM-dd HH:mm:ss' }}</h3>
+    <table class="striped centered">
+      <thead>
+        <tr>
+            <th> Memory Usage </th>
+            <th> Max Memory Usage </th>
+            <th> Memory Limit </th>
+            <th> System CPU Usage</th>
+            <th> Online CPU </th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>{{ memory_stats.max_usage }}</td>
+            <td>{{ memory_stats.usage }}</td>
+            <td>{{ memory_stats.limit }}</td>
+            <td>{{ cpu_stats.system_cpu_usage }}</td>
+            <td>{{ cpu_stats.online_cpus }}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <h4>Container Processes</h4>
+  <div *ngIf=msg>
+    <p  class="flow-text" style="overflow-wrap: break-word;">Id: {{ msg }}</p>
+  </div>
+  <table class="striped centered">
+    <thead>
+      <tr *ngIf=titles>
+          <th *ngFor="let title of titles"> {{ title }} </th>
+      </tr>
+    </thead>
+    <tbody *ngIf=processes>
+        <tr *ngFor="let process of processes">
+          <td *ngFor="let item of process">{{ item }}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>  
+
