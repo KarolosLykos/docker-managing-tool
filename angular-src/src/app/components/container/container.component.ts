@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { DockerService } from '../../services/docker.service'
 import { NotificationsService } from 'angular2-notifications';
 import { ActivatedRoute } from '@angular/router';
+import { OnDestroy } from "@angular/core";
+import { ISubscription } from "rxjs/Subscription";
+import "rxjs/add/operator/takeWhile";
+
 import * as io from 'socket.io-client';
 
 @Component({
@@ -10,60 +14,50 @@ import * as io from 'socket.io-client';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent implements OnInit {
-   id:any	  	
    private sub: any;
+   id:any	  	
    titles: any
    processes: any
    socket: SocketIOClient.Socket;
-   read:any
-   memory_stats:any
-   cpu_stats:any
-   stats:any
-
+   stat:any
+   private subscription: ISubscription
+   private alive: boolean = true;
 
   constructor(
   		private route: ActivatedRoute,
   		private dockerService: DockerService, 
-      private notificationsService: NotificationsService
+      private notificationsService: NotificationsService,
   	) { 
-    this.sub = this.route.params.subscribe(params => {
-       this.id = params['id']; 
-    });
-
-    this.socket = io.connect('http://localhost:3000/stats')
-  }
+        this.sub = this.route.params.subscribe(params => {
+           this.id = params['id']; 
+        })
+        this.socket = io.connect('http://localhost:3000/stats')
+      }
 
   ngOnInit() {
 
-  
-  	this.dockerService.getContainerInfo(this.id).subscribe( data => {
-		if(data.success){
-			this.processes = data.data.Processes
-			this.titles = data.data.Titles
-		}else{
-		 this.notificationsService.success('Error',data.data.json.message, { timeOut: 3000, clickToClose: true });
-		}
-  	})
 
-  	
-  }
-  onStatsClicked(){
-    this.dockerService.getContainerStatus(this.id).subscribe( data => {
-    if(data.success){
-        this.stats = JSON.parse(data.data)
-        this.read = this.stats.read
-        this.memory_stats = this.stats.memory_stats
-        this.cpu_stats = this.stats.cpu_stats
+    this.dockerService.getContainerStatus(this.id)
+    .takeWhile(() => this.alive)
+    .subscribe( data => {
+      if(data.success){
+        this.notificationsService.success('Success',data.msg, { timeOut: 3000, clickToClose: true });
       }else{
-      this.notificationsService.success('Error',data.data.message, { timeOut: 3000, clickToClose: true });
-      } 
+        this.notificationsService.error('Error',data.msg, { timeOut: 3000, clickToClose: true });
+      }
     })
 
-    
+    this.socket.on('stats', (data: any) => {
+          this.stat = JSON.parse(data.stat)
+        })
 
-    
+  	this.dockerService.getContainerTop(this.id).subscribe( data => {
+  		if(data.success){
+  			this.processes = data.data.Processes
+  			this.titles = data.data.Titles
+  		}else{
+  		 this.notificationsService.error('Error',data.data.json.message, { timeOut: 3000, clickToClose: true });
+  		}
+  	})  	
   }
-
-  
-
 }

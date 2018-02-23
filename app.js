@@ -7,8 +7,7 @@ const appConfig = require('./config/app')
 
 const app = express()
 const server = require('http').Server(app)
-const io = require('socket.io')(server)
-io.sockets.setMaxListeners(200);
+global.io = require('socket.io')(server)
 
 // Express Router seperate folder
 const docker = require('./routes/docker/docker')

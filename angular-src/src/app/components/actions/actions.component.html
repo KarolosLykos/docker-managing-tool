@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col s12">
+    <div *ngIf=container class="card cyan darken-4">
+      <div class="card-content white-text">
+        <span class="card-title">{{ container.Id }}</span>
+        <ul>
+          <li>Image: {{ container.Image }}</li>
+          <li>Id: {{ container.Id }}</li>
+          <li>State: {{ container.State }}</li>
+          <li>Status: {{ container.Status }}</li>
+        </ul>
+
+      </div>
+      <div class="card-action">
+        <a (click)="startContainer()"
+          [ngClass]="{disabled: container.State==='running'}"
+          class="waves-effect waves-light btn green">Start</a>
+        <a (click)="restartContainer()" 
+          class="waves-effect waves-light btn blue">Restart</a>
+        <a (click)="stopContainer()" 
+          [ngClass]="{disabled: container.State!=='running'}"
+          class="waves-effect waves-light btn yellow-darken">Stop</a>
+        <a (click)="deleteContainer()" 
+          class="waves-effect waves-light btn red">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,7 @@
 <div class="row">
   <h4>Container Stats</h4>
-  <a class="waves-effect waves-light btn" (click)="onStatsClicked()">Stats</a>
-  <div *ngIf=stats>
-    <h3>Time: {{ read | date:'yyyy-MM-dd HH:mm:ss' }}</h3>
+  <div *ngIf=stat>
+    <h3>Time: {{ stat.read | date:'yyyy-MM-dd HH:mm:ss' }}</h3>
     <table class="striped centered">
       <thead>
         <tr>
@@ -10,16 +9,16 @@
             <th> Max Memory Usage </th>
             <th> Memory Limit </th>
             <th> System CPU Usage</th>
-            <th> Online CPU </th>
+            <th> Per CPU usage</th>
         </tr>
       </thead>
       <tbody>
           <tr>
-            <td>{{ memory_stats.max_usage }}</td>
-            <td>{{ memory_stats.usage }}</td>
-            <td>{{ memory_stats.limit }}</td>
-            <td>{{ cpu_stats.system_cpu_usage }}</td>
-            <td>{{ cpu_stats.online_cpus }}</td>
+            <td>{{ stat.memory_stats.max_usage }}</td>
+            <td>{{ stat.memory_stats.usage }}</td>
+            <td>{{ stat.memory_stats.limit }}</td>
+            <td>{{ stat.cpu_stats.system_cpu_usage }}</td>
+            <td><li *ngFor="let cpu of stat.cpu_stats.cpu_usage.percpu_usage">{{ cpu }}</li></td>
           </tr>
       </tbody>
     </table>

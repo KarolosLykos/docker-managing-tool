@@ -15,12 +15,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 
 import { DockerService } from './services/docker.service';
-import { ContainerComponent } from './components/container/container.component'
+import { ContainerComponent } from './components/container/container.component';
+import { LogsComponent } from './components/logs/logs.component';
+import { ActionsComponent } from './components/actions/actions.component';
+import { CreateComponent } from './components/create/create.component'
 
 const appRoutes: Routes = [
   {path:'', component:HomeComponent},
   {path:'dashboard', component:DashboardComponent},
   {path:'container', component:ContainerComponent},
+  {path:'logs', component:LogsComponent},
+  {path:'actions', component:ActionsComponent},
+  {path:'create', component:CreateComponent},
 ]
 
 @NgModule({
@@ -29,7 +35,10 @@ const appRoutes: Routes = [
     NavbarComponent,
     DashboardComponent,
     HomeComponent,
-    ContainerComponent
+    ContainerComponent,
+    LogsComponent,
+    ActionsComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

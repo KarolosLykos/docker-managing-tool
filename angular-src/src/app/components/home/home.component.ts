@@ -27,22 +27,30 @@ export class HomeComponent implements OnInit {
   			
   			this.containers = data.data
   		}else{
-  			this.notificationsService.success('Error',data.msg, { timeOut: 3000, clickToClose: true });
+  			this.notificationsService.error('Error',data.msg, { timeOut: 3000, clickToClose: true });
   		}
   	})
 
   	this.dockerService.getImageList().subscribe( data => {
 		if(data.success){
-			console.log(data)
   			this.images = data.data
   		}else{
-  			this.notificationsService.success('Error',data.msg, { timeOut: 3000, clickToClose: true });
+  			this.notificationsService.error('Error',data.msg, { timeOut: 3000, clickToClose: true });
   		}
   	})
   }
 
-  containerInfo(id){
+  onInfoClicked(id){
 		this.router.navigate(['/container', {id:id}]);
 	}
+  onActionsClicked(id){
+    this.router.navigate(['/actions', {id:id}]);
+  }
+  onLogsClicked(id){
+    this.router.navigate(['/logs', {id:id}]);
+  }
+  onCreateClicked(){
+    this.router.navigate(['/create']);
+  }
 
 }
