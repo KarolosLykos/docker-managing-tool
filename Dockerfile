@@ -1,20 +1,32 @@
-FROM node:carbon
+FROM node:slim
 
-# Create app directory
+# Create App Directory
+RUN mkdir -p /app
 WORKDIR /app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
+# Install Dependencies For Server
+COPY package*.json /app/
+RUN cd /app/
 RUN npm install
-# If you are building your code for production
-# RUN npm install --only=production
 
-# Bundle app source
+# Bundle App Source
 COPY . /app
 
-EXPOSE 3000
+RUN mkdir -p /angular-src
+WORKDIR /angular-src/
 
-CMD [ "npm", "start" ]
+
+
+COPY ./angular-src/package*.json /angular-src/
+
+WORKDIR /angular-src/
+RUN npm install
+
+COPY ./angular-src /angular-src
+
+
+WORKDIR /app
+RUN ls
+
+EXPOSE 3000
+CMD ["npm", "start"]

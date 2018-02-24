@@ -37,6 +37,6 @@ app.get('*', (req,res) => {
 })
 
 // Start Server
-server.listen(appConfig.port, appConfig.host, () => {
-  console.log(`Running on http://${appConfig.host}:${appConfig.port}`)
+server.listen(appConfig.port ,() => {
+  console.log(`Running on http://localhost:${appConfig.port}`)
 })
