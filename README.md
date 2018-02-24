@@ -53,14 +53,8 @@ Your application should run on port 3000 with the *development* environment conf
 ## Development and deployment With Docker
 
 * Install [Docker](https://docs.docker.com/installation/#installation)
-* Install [Compose](https://docs.docker.com/compose/install/)
 
-* Local development and testing with compose:
-```bash
-$ docker-compose up
-```
-
-* Local development and testing with just Docker:
+* Local development with Docker:
 ```bash
 $ docker build -t 'tag-name' .
 $ docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p ip:port:3000 'tag-name'
