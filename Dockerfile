@@ -4,7 +4,7 @@ FROM node:slim
 RUN mkdir -p /app
 WORKDIR /app
 
-# Install Dependencies For Server
+# Install Dependencies
 COPY package*.json /app/
 RUN cd /app/
 RUN npm install
@@ -15,15 +15,12 @@ COPY . /app
 RUN mkdir -p /angular-src
 WORKDIR /angular-src/
 
-
-
 COPY ./angular-src/package*.json /angular-src/
 
 WORKDIR /angular-src/
 RUN npm install
 
 COPY ./angular-src /angular-src
-
 
 WORKDIR /app
 RUN ls
