@@ -4,6 +4,20 @@ Make sure you have installed all of the following prerequisites on your developm
 * Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager. If you encounter any problems, you can also use this [GitHub Gist](https://gist.github.com/isaacs/579814) to install Node.js.
 * Docker - [Download & Install Node.js](https://docs.docker.com/install/)
 
+## System Requirements
+To be able to run
+- Node.js > 6.0
+- Provide docker socket (/var/run/docker.sock)
+- Docker for windows do not support Unix socket
+
+## Features
+- List all available Images and Containers (home)
+- Create new Container (create) (provide and images name and name {optional: tag})
+- Start/Stop/Restart/Delete a container (actions)
+- List stats of a container (info)
+- List logs of a container (logs)
+- (info,logs pages requires reloading the page)
+
 ## Downloading tradeline
 
 ### Cloning The GitHub Repository
@@ -39,14 +53,8 @@ Your application should run on port 3000 with the *development* environment conf
 ## Development and deployment With Docker
 
 * Install [Docker](https://docs.docker.com/installation/#installation)
-* Install [Compose](https://docs.docker.com/compose/install/)
 
-* Local development and testing with compose:
-```bash
-$ docker-compose up
-```
-
-* Local development and testing with just Docker:
+* Local development with Docker:
 ```bash
 $ docker build -t 'tag-name' .
 $ docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p ip:port:3000 'tag-name'
