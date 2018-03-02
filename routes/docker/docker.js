@@ -169,15 +169,14 @@ router.post('/container/create', (req,res,next) => {
 	docker.image.create({}, { fromImage: req.body.params.image, tag: req.body.params.tag })
 	  .then(() => {
 	  		let image = docker.image.get(req.body.image)
-	  		console.log(image)
 		  	docker.container.create({
 				Image: req.body.params.image,
 				name: req.body.params.name
 			}).then(container => {
 			 	res.json({success:true, msg:'Container created!'})	
-			}).catch(err => res.json({success:false, msg:'Something went'}))
+			}).catch(err => res.json({success:false, msg:err.message}))
 	  })
-	  .catch(err => console.log('asdasdasdasdasd'))
+	  .catch(err => console.log(err))
 })
 
 

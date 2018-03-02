@@ -478,12 +478,12 @@ var CreateComponent = (function () {
             this.dockerService.createContainer(this.name, this.image, this.tag)
                 .subscribe(function (data) {
                 if (data.success) {
-                    _this.notificationsService.success('Success', 'data.msg', { timeOut: 3000, clickToClose: true });
+                    _this.notificationsService.success('Success', data.msg, { timeOut: 3000, clickToClose: true });
                     _this.router.navigate(['/']);
                 }
                 else {
                     console.log(data);
-                    _this.notificationsService.error('Error', 'data.msg', { timeOut: 3000, clickToClose: true });
+                    _this.notificationsService.error('Error', data.msg, { timeOut: 3000, clickToClose: true });
                     _this.router.navigate(['/']);
                 }
             });
