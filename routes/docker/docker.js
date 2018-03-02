@@ -166,23 +166,18 @@ router.get('/container/status', async (req,res,next) => {
 // Create new container
 router.post('/container/create', (req,res,next) => {
 	let nsp = io.of('create')	
-	let promisifyStream = stream => new Promise((resolve, reject) => {
-	  stream.on('end', resolve)
-	  stream.on('err', reject)
-	})
-
 	docker.image.create({}, { fromImage: req.body.params.image, tag: req.body.params.tag })
-	  .then(stream => promisifyStream(stream))
 	  .then(() => {
 	  		let image = docker.image.get(req.body.image)
+	  		console.log(image)
 		  	docker.container.create({
 				Image: req.body.params.image,
 				name: req.body.params.name
 			}).then(container => {
 			 	res.json({success:true, msg:'Container created!'})	
-			}).catch(err => res.json({success:false, msg:err.message}))
+			}).catch(err => res.json({success:false, msg:'Something went'}))
 	  })
-	  .catch(err => console.log(err))
+	  .catch(err => console.log('asdasdasdasdasd'))
 })
 
 
