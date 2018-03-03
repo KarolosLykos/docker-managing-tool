@@ -166,8 +166,19 @@ router.get('/container/status', async (req,res,next) => {
 // Create new container
 router.post('/container/create', (req,res,next) => {
 	let nsp = io.of('create')	
+	const promisifyStream = (stream) => new Promise((resolve, reject) => {
+	  stream.on('data', (d) => {
+	  	// nsp.setMaxListeners(0)
+	  	console.log(d.toString())
+		// nsp.emit('create', d.toString())
+	  })
+	  stream.on('end', resolve)
+	  stream.on('error', reject)
+	})
 	docker.image.create({}, { fromImage: req.body.params.image, tag: req.body.params.tag })
+	  .then((stream) => promisifyStream(stream))
 	  .then(() => {
+
 	  		let image = docker.image.get(req.body.image)
 		  	docker.container.create({
 				Image: req.body.params.image,
@@ -176,7 +187,7 @@ router.post('/container/create', (req,res,next) => {
 			 	res.json({success:true, msg:'Container created!'})	
 			}).catch(err => res.json({success:false, msg:err.message}))
 	  })
-	  .catch(err => console.log(err))
+	  .catch(err => res.json({success:false, msg:'Something went wrong'}))
 })
 
 

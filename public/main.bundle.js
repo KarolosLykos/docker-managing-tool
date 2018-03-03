@@ -431,7 +431,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/create/create.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n    <form (submit)=\"onCreateSubmit()\" class=\"col s12\">\n      <div class=\"row\">\n        <div class=\"input-field col s12\">\n          <i class=\"material-icons prefix\">done</i>\n          <input id=\"name\" type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"validate\">\n          <label for=\"name\">Name</label>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"input-field col s12\">\n          <i class=\"material-icons prefix\">done</i>\n          <input id=\"image\" type=\"text\" [(ngModel)]=\"image\" name=\"image\" class=\"validate\">\n          <label for=\"image\">Image</label>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"input-field col s12\">\n          <i class=\"material-icons prefix\">info</i>\n          <input value=\"asd\" id=\"tag\" type=\"text\" [(ngModel)]=\"tag\" name=\"tag\">\n          <label for=\"tag\">Tag</label>\n        </div>\n      </div>\n      <button class=\"btn waves-effect waves-light\" type=\"submit\" name=\"action\">Submit\n          <i class=\"material-icons right\">send</i>\n      </button>\n    </form>\n  </div>\n\n  <div *ngIf=logs>\n    <h4>{{ logs }}</h4>\n  </div>"
+module.exports = "<div class=\"row\">\n    <form (submit)=\"onCreateSubmit()\" class=\"col s12\">\n      <div class=\"row\">\n        <div class=\"input-field col s12\">\n          <i class=\"material-icons prefix\">done</i>\n          <input id=\"name\" type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"validate\">\n          <label for=\"name\">Name</label>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"input-field col s12\">\n          <i class=\"material-icons prefix\">done</i>\n          <input id=\"image\" type=\"text\" [(ngModel)]=\"image\" name=\"image\" class=\"validate\">\n          <label for=\"image\">Image</label>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"input-field col s12\">\n          <i class=\"material-icons prefix\">info</i>\n          <input value=\"asd\" id=\"tag\" type=\"text\" [(ngModel)]=\"tag\" name=\"tag\">\n          <label for=\"tag\">Tag</label>\n        </div>\n      </div>\n      <button class=\"btn waves-effect waves-light\" type=\"submit\" name=\"action\">Submit\n          <i class=\"material-icons right\">send</i>\n      </button>\n    </form>\n  </div>\n  \n  <div *ngIf=loading class=\"preloader-wrapper big active\">\n    <div class=\"spinner-layer spinner-blue-only\">\n      <div class=\"circle-clipper left\">\n        <div class=\"circle\"></div>\n      </div><div class=\"gap-patch\">\n        <div class=\"circle\"></div>\n      </div><div class=\"circle-clipper right\">\n        <div class=\"circle\"></div>\n      </div>\n    </div>\n  </div>\n\n\n  <div *ngIf=logs>\n    <h4>{{ logs }}</h4>\n  </div>\n\n"
 
 /***/ }),
 
@@ -445,6 +445,8 @@ module.exports = "<div class=\"row\">\n    <form (submit)=\"onCreateSubmit()\" c
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_notifications___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_notifications__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_docker_service__ = __webpack_require__("../../../../../src/app/services/docker.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_socket_io_client__ = __webpack_require__("../../../../socket.io-client/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_socket_io_client__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -458,13 +460,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CreateComponent = (function () {
     function CreateComponent(notificationsService, dockerService, router) {
         this.notificationsService = notificationsService;
         this.dockerService = dockerService;
         this.router = router;
+        this.socket = __WEBPACK_IMPORTED_MODULE_4_socket_io_client__["connect"]('http://localhost:3000/create');
     }
     CreateComponent.prototype.ngOnInit = function () {
+        this.loading = false;
     };
     CreateComponent.prototype.onCreateSubmit = function () {
         var _this = this;
@@ -475,6 +480,7 @@ var CreateComponent = (function () {
             this.notificationsService.error('Error', 'Field Name and Image not optional', { timeOut: 3000, clickToClose: true });
         }
         else {
+            this.loading = true;
             this.dockerService.createContainer(this.name, this.image, this.tag)
                 .subscribe(function (data) {
                 if (data.success) {
@@ -482,13 +488,15 @@ var CreateComponent = (function () {
                     _this.router.navigate(['/']);
                 }
                 else {
-                    console.log(data);
                     _this.notificationsService.error('Error', data.msg, { timeOut: 3000, clickToClose: true });
                     _this.router.navigate(['/']);
                 }
             });
             return true;
         }
+        // this.socket.on('create', (data: any) => {
+        //    this.logs = data
+        //    })
     };
     CreateComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
