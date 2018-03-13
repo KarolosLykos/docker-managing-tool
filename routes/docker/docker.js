@@ -4,12 +4,40 @@ const {Docker} = require('node-docker-api')
 const dockerConfig = require('../../config/docker')
 const path = require('path')
 const docker = new Docker({ socketPath: dockerConfig.socket })
-const dockerId = '7c0e8dd5c1a7'
+const multer = require('multer');
+const tar = require('tar-fs');
 
-// Temp variables
-const dockerImage = 'tutum/hello-world'
-const dockerTag = 'latest'
-const dockerName = 'name1'
+
+// Set Storage Engine
+const storage = multer.diskStorage({
+	destination: './uploads/',
+	filename: function(req, file, cb){
+		cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+	}
+})
+
+// Init Upload
+const upload = multer({
+	storage: storage,
+	fileFilter:function (req, file, cb) {
+		checkFileType(file, cb)
+	}
+}).single('tarFile')
+
+// Check File type
+function checkFileType(file, cb) {
+	// Allowed ext
+	const filetypes = /tar/
+	// Check ext
+	const extname = filetypes.test(path.extname(file.originalname).toLowerCase())
+	// Check the mime type
+	const mimetype = filetypes.test(file.mimetype)
+	if (extname && mimetype) {
+			return cb(null, true)
+	}else{
+			cb('Error: Tar only')
+	}
+}
 
 // List all images
 router.get('/images/list', async (req,res,next) => {
@@ -29,6 +57,34 @@ router.get('/images/list', async (req,res,next) => {
 	catch(err) {
 	    res.json({success:false, msg:'Something went wrong'})
 	}
+})
+
+router.post('/image/build', async (req,res,next) => {
+	try {
+		const promisifyStream = stream => new Promise((resolve, reject) => {
+		  stream.on('data', data => console.log(data.toString()))
+		  stream.on('end', resolve)
+		  stream.on('error', reject)
+		});
+		let tag = req.query.tag
+		upload(req, res, (err) => {
+			if (err) {
+				res.json({success:false, msg: err})
+			}
+			let tarStream = tar.pack(req.file.path)
+			docker.image.build(tarStream, {
+			  t: tag
+			})
+			  .then(stream => promisifyStream(stream))
+			  .then(() => docker.image.get(tag).status())
+				.then(image => res.json({success:true, msg:'Image uploaded Successfully'}))
+				.catch(error => res.json({success:false, msg:'Something went wrong'}));
+		})
+	}
+	catch(err) {
+	    res.json({success:false, msg:'Something went wrong'})
+	}
+
 })
 
 // Get container info
@@ -141,7 +197,7 @@ router.get('/container/top', (req,res,next) => {
 
 // Inspect Container
 router.get('/container/status', async (req,res,next) => {
-	let nsp = io.of('stats')	
+	let nsp = io.of('stats')
 	let id = req.query.id
 		let containers = await docker.container.list({all:true})
 		let container = containers.find( (container)=> {
@@ -165,7 +221,7 @@ router.get('/container/status', async (req,res,next) => {
 
 // Create new container
 router.post('/container/create', (req,res,next) => {
-	let nsp = io.of('create')	
+	let nsp = io.of('create')
 	const promisifyStream = (stream) => new Promise((resolve, reject) => {
 	  stream.on('data', (d) => {
 	  	// nsp.setMaxListeners(0)
@@ -184,7 +240,7 @@ router.post('/container/create', (req,res,next) => {
 				Image: req.body.params.image,
 				name: req.body.params.name
 			}).then(container => {
-			 	res.json({success:true, msg:'Container created!'})	
+			 	res.json({success:true, msg:'Container created!'})
 			}).catch(err => res.json({success:false, msg:err.message}))
 	  })
 	  .catch(err => res.json({success:false, msg:'Something went wrong'}))
@@ -192,9 +248,9 @@ router.post('/container/create', (req,res,next) => {
 
 
 
-// Get logs 
+// Get logs
 router.get('/container/logs', (req,res,next) => {
-	let nsp = io.of('logs')	
+	let nsp = io.of('logs')
 	let container = docker.container.get(req.query.id)
 	container.logs({
 	    follow: true,

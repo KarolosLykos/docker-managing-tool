@@ -26,6 +26,12 @@ stats:any
   	.map(res => res.json())
   }
 
+  buildImage(formData, tag){
+  	let headers = new Headers()
+  	return this.http.post('http://localhost:3000/docker/image/build', formData,{params: {tag:tag},headers: headers})
+      .map(files => files.json())
+  }
+
   getContainerTop(id){
     let headers = new Headers()
     headers.append('Content-Type','application/json')

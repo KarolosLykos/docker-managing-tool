@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DockerService } from '../../services/docker.service'
-import * as io from 'socket.io-client';
+import { NotificationsService } from 'angular2-notifications'
+import { Http, Headers } from '@angular/http'
 
 @Component({
   selector: 'app-dashboard',
@@ -8,39 +9,40 @@ import * as io from 'socket.io-client';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+loading:any
+tag:any
+filesToUpload: any;
 
-	// messageText: string;
- //    messages: Array<any>;
-    // socket2: SocketIOClient.Socket;
-    // socket: SocketIOClient.Socket;
-
-  constructor(private dockerService: DockerService) {
-  	// this.socket2 = io.connect('http://localhost:3000/my-namespace2')
-    // this.socket = io.connect('http://localhost:3000/my-namespace')
-  }
+  constructor(
+    private notificationsService: NotificationsService,
+    private dockerService: DockerService,
+    private http:Http) { }
 
   ngOnInit() {
-
-    // this.dockerService.getContainerStatus('613c65fb9a71346fe1c21912cf8ad07f87517043dd96afda3e49f831fe741acd').subscribe( data => {
-    // if(data.success){
-      // this.processes = data.data.Processes
-      // this.titles = data.data.Titles
-      //  console.log(data)
-      // }else{
-      // this.notificationsService.success('Error',data.data.json.message, { timeOut: 3000, clickToClose: true });
-    //     console.log(data)
-    //   } 
-    // })
-
-      // this.socket2.on('event2', function(data) { 
-      //     console.log(data);
-      //   })
-      // this.socket.on('event1', function(data) { 
-      //     console.log(data);
-      //   })
-
-      // this.socket.on('connect', function(){
-      //   console.log("SOCKET CLIENT CONNECT")
-      // });
+    this.loading = false
    }
+
+   onFileSelection(fileInput) {
+     this.filesToUpload = fileInput.target.files[0];
+   }
+
+   onSubmit(){
+   	if( this.tag === undefined || this.filesToUpload === undefined){
+   		this.notificationsService.error('Error','Field tag and tar not optional', { timeOut: 3000, clickToClose: true });
+   	} else if (this.filesToUpload.type !== 'application/x-tar') {
+      this.notificationsService.error('Error','Input file must be tar', { timeOut: 3000, clickToClose: true });
+    }else{
+      this.loading = true
+      const formData: any = new FormData();
+      const file = this.filesToUpload;
+      formData.append('tarFile', file, this.filesToUpload.name)
+      let headers = new Headers()
+      console.log(this.tag)
+      this.dockerService.buildImage(formData,this.tag)
+        .subscribe(files => console.log('files', files))
+
+   	}
+  }
+
+
 }
