@@ -1,6 +1,6 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src/$$_lazy_route_resource lazy recursive":
+/***/ "./src/$$_lazy_route_resource lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,41 +13,30 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy recursive";
+webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.component.css":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/app.component.css":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = ""
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.component.html":
+/***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<app-navbar></app-navbar>\r\n<main class=\"container\">\r\n  <simple-notifications></simple-notifications>\r\n  <router-outlet></router-outlet>\r\n</main>"
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.component.ts":
+/***/ "./src/app/app.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -62,8 +51,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-root',
-            template: __webpack_require__("../../../../../src/app/app.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+            template: __webpack_require__("./src/app/app.component.html"),
+            styles: [__webpack_require__("./src/app/app.component.css")]
         })
     ], AppComponent);
     return AppComponent;
@@ -73,29 +62,29 @@ var AppComponent = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/app.module.ts":
+/***/ "./src/app/app.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_materialize__ = __webpack_require__("../../../../angular2-materialize/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular2_notifications__ = __webpack_require__("../../../../angular2-notifications/angular2-notifications.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_materialize__ = __webpack_require__("./node_modules/angular2-materialize/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_navbar_navbar_component__ = __webpack_require__("./src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__("./src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular2_notifications__ = __webpack_require__("./node_modules/angular2-notifications/angular2-notifications.umd.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angular2_notifications___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_angular2_notifications__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_docker_service__ = __webpack_require__("../../../../../src/app/services/docker.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_container_container_component__ = __webpack_require__("../../../../../src/app/components/container/container.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_logs_logs_component__ = __webpack_require__("../../../../../src/app/components/logs/logs.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_actions_actions_component__ = __webpack_require__("../../../../../src/app/components/actions/actions.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_create_create_component__ = __webpack_require__("../../../../../src/app/components/create/create.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_docker_service__ = __webpack_require__("./src/app/services/docker.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_container_container_component__ = __webpack_require__("./src/app/components/container/container.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_logs_logs_component__ = __webpack_require__("./src/app/components/logs/logs.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_actions_actions_component__ = __webpack_require__("./src/app/components/actions/actions.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_create_create_component__ = __webpack_require__("./src/app/components/create/create.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -162,41 +151,30 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/actions/actions.component.css":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/components/actions/actions.component.css":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = ""
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/actions/actions.component.html":
+/***/ "./src/app/components/actions/actions.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"row\">\r\n  <div class=\"col s12\">\r\n    <div *ngIf=container class=\"card cyan darken-4\">\r\n      <div class=\"card-content white-text\">\r\n        <span class=\"card-title\">{{ container.Id }}</span>\r\n        <ul>\r\n          <li>Image: {{ container.Image }}</li>\r\n          <li>Id: {{ container.Id }}</li>\r\n          <li>State: {{ container.State }}</li>\r\n          <li>Status: {{ container.Status }}</li>\r\n        </ul>\r\n\r\n      </div>\r\n      <div class=\"card-action\">\r\n        <a (click)=\"startContainer()\"\r\n          [ngClass]=\"{disabled: container.State==='running'}\"\r\n          class=\"waves-effect waves-light btn green\">Start</a>\r\n        <a (click)=\"restartContainer()\" \r\n          class=\"waves-effect waves-light btn blue\">Restart</a>\r\n        <a (click)=\"stopContainer()\" \r\n          [ngClass]=\"{disabled: container.State!=='running'}\"\r\n          class=\"waves-effect waves-light btn yellow-darken\">Stop</a>\r\n        <a (click)=\"deleteContainer()\" \r\n          class=\"waves-effect waves-light btn red\">Delete</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/actions/actions.component.ts":
+/***/ "./src/app/components/actions/actions.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ActionsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_docker_service__ = __webpack_require__("../../../../../src/app/services/docker.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__ = __webpack_require__("../../../../angular2-notifications/angular2-notifications.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_docker_service__ = __webpack_require__("./src/app/services/docker.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__ = __webpack_require__("./node_modules/angular2-notifications/angular2-notifications.umd.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_notifications__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -288,8 +266,8 @@ var ActionsComponent = (function () {
     ActionsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-actions',
-            template: __webpack_require__("../../../../../src/app/components/actions/actions.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/actions/actions.component.css")]
+            template: __webpack_require__("./src/app/components/actions/actions.component.html"),
+            styles: [__webpack_require__("./src/app/components/actions/actions.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_docker_service__["a" /* DockerService */],
             __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__["NotificationsService"],
@@ -303,43 +281,32 @@ var ActionsComponent = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/container/container.component.css":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/components/container/container.component.css":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = ""
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/container/container.component.html":
+/***/ "./src/app/components/container/container.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"row\">\r\n  <h4>Container Stats</h4>\r\n  <div *ngIf=stat>\r\n    <h3>Time: {{ stat.read | date:'yyyy-MM-dd HH:mm:ss' }}</h3>\r\n    <table class=\"striped centered\">\r\n      <thead>\r\n        <tr>\r\n            <th> Memory Usage </th>\r\n            <th> Max Memory Usage </th>\r\n            <th> Memory Limit </th>\r\n            <th> System CPU Usage</th>\r\n            <th> Per CPU usage</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n          <tr>\r\n            <td>{{ stat.memory_stats.max_usage }}</td>\r\n            <td>{{ stat.memory_stats.usage }}</td>\r\n            <td>{{ stat.memory_stats.limit }}</td>\r\n            <td>{{ stat.cpu_stats.system_cpu_usage }}</td>\r\n            <td><li *ngFor=\"let cpu of stat.cpu_stats.cpu_usage.percpu_usage\">{{ cpu }}</li></td>\r\n          </tr>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <h4>Container Processes</h4>\r\n  <div *ngIf=msg>\r\n    <p  class=\"flow-text\" style=\"overflow-wrap: break-word;\">Id: {{ msg }}</p>\r\n  </div>\r\n  <table class=\"striped centered\">\r\n    <thead>\r\n      <tr *ngIf=titles>\r\n          <th *ngFor=\"let title of titles\"> {{ title }} </th>\r\n      </tr>\r\n    </thead>\r\n    <tbody *ngIf=processes>\r\n        <tr *ngFor=\"let process of processes\">\r\n          <td *ngFor=\"let item of process\">{{ item }}</td>\r\n        </tr>\r\n    </tbody>\r\n  </table>\r\n</div>  \r\n\r\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/container/container.component.ts":
+/***/ "./src/app/components/container/container.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContainerComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_docker_service__ = __webpack_require__("../../../../../src/app/services/docker.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__ = __webpack_require__("../../../../angular2-notifications/angular2-notifications.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_docker_service__ = __webpack_require__("./src/app/services/docker.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__ = __webpack_require__("./node_modules/angular2-notifications/angular2-notifications.umd.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_notifications__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_takeWhile__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/takeWhile.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_socket_io_client__ = __webpack_require__("../../../../socket.io-client/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_takeWhile__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/takeWhile.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_socket_io_client__ = __webpack_require__("./node_modules/socket.io-client/lib/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_socket_io_client__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -396,8 +363,8 @@ var ContainerComponent = (function () {
     ContainerComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-container',
-            template: __webpack_require__("../../../../../src/app/components/container/container.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/container/container.component.css")]
+            template: __webpack_require__("./src/app/components/container/container.component.html"),
+            styles: [__webpack_require__("./src/app/components/container/container.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_1__services_docker_service__["a" /* DockerService */],
@@ -410,42 +377,31 @@ var ContainerComponent = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/create/create.component.css":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/components/create/create.component.css":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = ""
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/create/create.component.html":
+/***/ "./src/app/components/create/create.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"row\">\r\n    <form (submit)=\"onCreateSubmit()\" class=\"col s12\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12\">\r\n          <i class=\"material-icons prefix\">done</i>\r\n          <input id=\"name\" type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"validate\">\r\n          <label for=\"name\">Name</label>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12\">\r\n          <i class=\"material-icons prefix\">done</i>\r\n          <input id=\"image\" type=\"text\" [(ngModel)]=\"image\" name=\"image\" class=\"validate\">\r\n          <label for=\"image\">Image</label>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12\">\r\n          <i class=\"material-icons prefix\">info</i>\r\n          <input value=\"asd\" id=\"tag\" type=\"text\" [(ngModel)]=\"tag\" name=\"tag\">\r\n          <label for=\"tag\">Tag</label>\r\n        </div>\r\n      </div>\r\n      <button class=\"btn waves-effect waves-light\" type=\"submit\" name=\"action\">Submit\r\n          <i class=\"material-icons right\">send</i>\r\n      </button>\r\n    </form>\r\n  </div>\r\n\r\n  <div *ngIf=loading class=\"preloader-wrapper big active\">\r\n    <div class=\"spinner-layer spinner-blue-only\">\r\n      <div class=\"circle-clipper left\">\r\n        <div class=\"circle\"></div>\r\n      </div><div class=\"gap-patch\">\r\n        <div class=\"circle\"></div>\r\n      </div><div class=\"circle-clipper right\">\r\n        <div class=\"circle\"></div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <div *ngIf=logs>\r\n    <h4>{{ logs }}</h4>\r\n  </div>\r\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/create/create.component.ts":
+/***/ "./src/app/components/create/create.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_notifications__ = __webpack_require__("../../../../angular2-notifications/angular2-notifications.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_notifications__ = __webpack_require__("./node_modules/angular2-notifications/angular2-notifications.umd.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_notifications___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_notifications__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_docker_service__ = __webpack_require__("../../../../../src/app/services/docker.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_socket_io_client__ = __webpack_require__("../../../../socket.io-client/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_docker_service__ = __webpack_require__("./src/app/services/docker.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_socket_io_client__ = __webpack_require__("./node_modules/socket.io-client/lib/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_socket_io_client__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -501,8 +457,8 @@ var CreateComponent = (function () {
     CreateComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-create',
-            template: __webpack_require__("../../../../../src/app/components/create/create.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/create/create.component.css")]
+            template: __webpack_require__("./src/app/components/create/create.component.html"),
+            styles: [__webpack_require__("./src/app/components/create/create.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angular2_notifications__["NotificationsService"],
             __WEBPACK_IMPORTED_MODULE_2__services_docker_service__["a" /* DockerService */],
@@ -515,41 +471,30 @@ var CreateComponent = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/dashboard/dashboard.component.css":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/components/dashboard/dashboard.component.css":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = ""
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/dashboard/dashboard.component.html":
+/***/ "./src/app/components/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"row\">\r\n    <form (submit)=\"onSubmit()\" class=\"col s12\" enctype=\"multipart/form-data\">\r\n      <div class=\"row\">\r\n        <div class=\"input-field col s12\">\r\n          <i class=\"material-icons prefix\">done</i>\r\n          <input id=\"tag\" type=\"text\" [(ngModel)]=\"tag\" name=\"tag\" class=\"validate\">\r\n          <label for=\"tag\">Tag</label>\r\n        </div>\r\n      </div>\r\n      <div class=\"row file-field input-field\">\r\n        <div class=\"btn\">\r\n          <span>Tar</span>\r\n          <input type=\"file\"\r\n          name=\"cin\" id=\"cin\"\r\n          (change)=\"onFileSelection($event)\"\r\n          multiple/>\r\n        </div>\r\n        <div class=\"file-path-wrapper\">\r\n          <input class=\"file-path validate\" type=\"text\">\r\n        </div>\r\n      </div>\r\n      <button class=\"btn waves-effect waves-light\" type=\"submit\" name=\"action\">Submit\r\n          <i class=\"material-icons right\">send</i>\r\n      </button>\r\n    </form>\r\n  </div>\r\n\r\n  <div *ngIf=loading class=\"preloader-wrapper big active\">\r\n    <div class=\"spinner-layer spinner-blue-only\">\r\n      <div class=\"circle-clipper left\">\r\n        <div class=\"circle\"></div>\r\n      </div><div class=\"gap-patch\">\r\n        <div class=\"circle\"></div>\r\n      </div><div class=\"circle-clipper right\">\r\n        <div class=\"circle\"></div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/dashboard/dashboard.component.ts":
+/***/ "./src/app/components/dashboard/dashboard.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_docker_service__ = __webpack_require__("../../../../../src/app/services/docker.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__ = __webpack_require__("../../../../angular2-notifications/angular2-notifications.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_docker_service__ = __webpack_require__("./src/app/services/docker.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__ = __webpack_require__("./node_modules/angular2-notifications/angular2-notifications.umd.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_notifications__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -596,8 +541,8 @@ var DashboardComponent = (function () {
     DashboardComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-dashboard',
-            template: __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.css")]
+            template: __webpack_require__("./src/app/components/dashboard/dashboard.component.html"),
+            styles: [__webpack_require__("./src/app/components/dashboard/dashboard.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_angular2_notifications__["NotificationsService"],
             __WEBPACK_IMPORTED_MODULE_1__services_docker_service__["a" /* DockerService */],
@@ -610,41 +555,30 @@ var DashboardComponent = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/home/home.component.css":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/components/home/home.component.css":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = ""
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/home/home.component.html":
+/***/ "./src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"row\">\r\n  <div class=\"col s4\">\r\n  <h1>Images</h1>\r\n  <ul materialize=\"collapsible\" class=\"collapsible popout\" data-collapsible=\"accordion\">\r\n    <li *ngFor=\"let image of images\">\r\n      <div class=\"collapsible-header cyan darken-4\">\r\n        <h5 class=\"white-text\">\r\n          <div *ngFor=\"let rt of image.repoTags\" class=\"chip\">{{rt}}</div>\r\n        </h5>\r\n      </div>\r\n      <div class=\"collapsible-body teal lighten-5\">\r\n      <span class=\"card-title\">\r\n        <p class=\"flow-text\" style=\"overflow-wrap: break-word;\">{{image.id}}</p>\r\n      </span>\r\n        <p>Containers : {{image.containers === -1 ? 0 : image.containers}}</p>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n  </div>\r\n  <div class=\"col s8\">\r\n    <h1>Containers<a (click)=\"onCreateClicked()\" class=\"waves-effect waves-light btn\">Create</a></h1>\r\n    <ul materialize=\"collapsible\" class=\"collapsible popout\" data-collapsible=\"accordion\">\r\n      <li *ngFor=\"let container of containers\">\r\n        <div class=\"collapsible-header cyan darken-4\">\r\n          <h5 class=\"white-text\">{{container.name}}</h5>\r\n        </div>\r\n        <div class=\"collapsible-body teal lighten-5\">\r\n        <span>\r\n          <p  class=\"flow-text\" style=\"overflow-wrap: break-word;\">Id: {{ container.id }}</p>\r\n          <p>State: {{ container.state }}</p>\r\n          <p>Status: {{ container.status }}</p>\r\n          <div class=\"chip cyan darken-4\">\r\n            {{ container.image }}\r\n          </div>\r\n          <p>Cmd: {{ container.cmd }}</p>\r\n          <p>Created: {{ container.created  * 1000 | date:'yyyy-MM-dd HH:mm:ss' }}</p>\r\n          <a (click)=\"onInfoClicked(container.id)\" class=\"waves-effect waves-light btn\">Info</a>\r\n          <a (click)=\"onLogsClicked(container.id)\" class=\"waves-effect waves-light btn\">Logs</a>\r\n          <a (click)=\"onActionsClicked(container.id)\" class=\"waves-effect waves-light btn\">Actions</a>\r\n        </span>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/home/home.component.ts":
+/***/ "./src/app/components/home/home.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_docker_service__ = __webpack_require__("../../../../../src/app/services/docker.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__ = __webpack_require__("../../../../angular2-notifications/angular2-notifications.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_docker_service__ = __webpack_require__("./src/app/services/docker.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__ = __webpack_require__("./node_modules/angular2-notifications/angular2-notifications.umd.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_notifications__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -698,8 +632,8 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-home',
-            template: __webpack_require__("../../../../../src/app/components/home/home.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/home/home.component.css")]
+            template: __webpack_require__("./src/app/components/home/home.component.html"),
+            styles: [__webpack_require__("./src/app/components/home/home.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_docker_service__["a" /* DockerService */],
             __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__["NotificationsService"],
@@ -712,43 +646,32 @@ var HomeComponent = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/logs/logs.component.css":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/components/logs/logs.component.css":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = ""
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/logs/logs.component.html":
+/***/ "./src/app/components/logs/logs.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"row\">\r\n\t<div class=\"col s12\">\r\n\t  <div class=\"card blue-grey darken-1\">\r\n\t    <div class=\"card-content white-text\">\r\n\t      <span class=\"card-title\">Logs</span>\r\n\t      <p *ngIf=info>{{ info }}</p>\r\n\t    </div>\r\n\t  </div>\r\n\t</div>\r\n</div>"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/logs/logs.component.ts":
+/***/ "./src/app/components/logs/logs.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_docker_service__ = __webpack_require__("../../../../../src/app/services/docker.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__ = __webpack_require__("../../../../angular2-notifications/angular2-notifications.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_docker_service__ = __webpack_require__("./src/app/services/docker.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications__ = __webpack_require__("./node_modules/angular2-notifications/angular2-notifications.umd.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_notifications___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_notifications__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_takeWhile__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/takeWhile.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_socket_io_client__ = __webpack_require__("../../../../socket.io-client/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_takeWhile__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/takeWhile.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_socket_io_client__ = __webpack_require__("./node_modules/socket.io-client/lib/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_socket_io_client___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_socket_io_client__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -797,8 +720,8 @@ var LogsComponent = (function () {
     LogsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-logs',
-            template: __webpack_require__("../../../../../src/app/components/logs/logs.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/logs/logs.component.css")]
+            template: __webpack_require__("./src/app/components/logs/logs.component.html"),
+            styles: [__webpack_require__("./src/app/components/logs/logs.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
             __WEBPACK_IMPORTED_MODULE_1__services_docker_service__["a" /* DockerService */],
@@ -811,37 +734,26 @@ var LogsComponent = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/navbar/navbar.component.css":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/app/components/navbar/navbar.component.css":
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+module.exports = ""
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/navbar/navbar.component.html":
+/***/ "./src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"navbar-fixed\">\r\n  <nav class=\"cyan darken-4\">\r\n      <div class=\"nav-wrapper\">\r\n        <a href=\"#!\" class=\"brand-logo center\">Docker</a>\r\n        <a href=\"#\" data-activates=\"mobile-demo\" class=\"button-collapse\"><i class=\"material-icons\">menu</i></a>\r\n        <ul class=\"left hide-on-med-and-down\">\r\n          <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n            <a [routerLink]=\"['/']\">Home</a>\r\n          </li>\r\n        </ul>\r\n        <ul class=\"right hide-on-med-and-down\">\r\n          <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n            <a [routerLink]=\"['/dashboard']\">Dashboard</a>\r\n          </li>\r\n        </ul>\r\n      </div>\r\n  </nav>\r\n</div>\r\n<ul class=\"side-nav\" id=\"mobile-demo\">\r\n  <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n    <a [routerLink]=\"['/']\">Home</a>\r\n  </li>\r\n</ul>"
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/navbar/navbar.component.ts":
+/***/ "./src/app/components/navbar/navbar.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -860,8 +772,8 @@ var NavbarComponent = (function () {
     NavbarComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-navbar',
-            template: __webpack_require__("../../../../../src/app/components/navbar/navbar.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/navbar/navbar.component.css")]
+            template: __webpack_require__("./src/app/components/navbar/navbar.component.html"),
+            styles: [__webpack_require__("./src/app/components/navbar/navbar.component.css")]
         }),
         __metadata("design:paramtypes", [])
     ], NavbarComponent);
@@ -872,14 +784,14 @@ var NavbarComponent = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/services/docker.service.ts":
+/***/ "./src/app/services/docker.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DockerService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -982,7 +894,7 @@ var DockerService = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/environments/environment.ts":
+/***/ "./src/environments/environment.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -998,15 +910,15 @@ var environment = {
 
 /***/ }),
 
-/***/ "../../../../../src/main.ts":
+/***/ "./src/main.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("./node_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("./src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
 
 
 
@@ -1023,7 +935,7 @@ Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* pl
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("../../../../../src/main.ts");
+module.exports = __webpack_require__("./src/main.ts");
 
 
 /***/ }),
